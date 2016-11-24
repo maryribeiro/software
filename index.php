@@ -1,8 +1,8 @@
 <?php
-    session_start();
-    if(!empty($_SESSION["login"])&&$_SESSION["validou"]==true) {
-        header("Location:principal.php");
-    }
+session_start();
+if (!empty($_SESSION["login"]) && $_SESSION["validou"] == true) {
+    header("Location:principal.php");
+}
 ?>
 <!DOCTYPE html>
 <!--
@@ -13,18 +13,26 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Software</title>
+        <title></title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/estilo_login.css" type="text/css" media="all"/>
     </head>
     <body>
-        <form method="post" action="login.php">
-            <label>Login: </label>
-            <input type="text" name="login"/>   
+        <div>
+            <center> <h2> <img src="img/info.png" width="200" height="100" alt="info"/>
+                    </center>
+            <hr>
             <br/>
-            <label>Senha: </label>
-            <input type="password" name="senha"/>
-            <br/>
-            <button type="submit" name="entrar">Entrar</button>            
-        </form>
+            <form method="post" action="login.php">
+                <label>Login: </label>
+                <input type="text" name="login" required/>   
+                <br/>
+                <label>Senha: </label>
+                <input type="password" name="senha" required/>
+                <br/>
+                <input type="submit" name="entrar" value="Entrar"/>  
+                <h2> 
+            </form>
+        </div>
     </body>
 </html>

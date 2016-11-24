@@ -5,9 +5,11 @@ if (isset($_POST["entrar"])) {
     $senha = $_POST["senha"];
     $DaoFuncionario = DaoFuncionario::getInstance();
     $validou = $DaoFuncionario->getLogin($login,$senha);
-    if ($validou > 0) {
+    if ($validou["id"] > 0) {
         session_start();
-        $_SESSION["login"]=$login;
+        $_SESSION["id"]=$validou["id"];
+        $_SESSION["login"]=$validou["login"];
+        $_SESSION["nome"]=$validou["nome"];
         $_SESSION["validou"]=true;        
         header("Location:principal.php");
     } else {
