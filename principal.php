@@ -4,13 +4,7 @@ if (empty($_SESSION["login"]) && $_SESSION["validou"] != true) {
     header("Location:index.php");
 }
 ?>
-
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -40,6 +34,7 @@ and open the template in the editor.
                         <li><a href="?pg=home" <?=(@$_GET["pg"]=="home"||empty($_GET["pg"]))?"class='active'":""; ?>><i class="fa fa-home fa-1x"></i> Home</a></li>
                         <li><a href="?pg=funcionarios" <?=(@$_GET["pg"]=="funcionarios")?"class='active'":""; ?>><i class="fa fa-users fa-1x"></i> Funcionários</a></li>
                         <li><a href="?pg=marcas" <?=(@$_GET["pg"]=="marcas")?"class='active'":""; ?>><i class="fa fa-registered fa-1x"></i> Marcas</a></li>
+                        <li><a href="?pg=produto" <?=(@$_GET["pg"]=="produto")?"class='active'":""; ?>><i class="fa fa-shopping-cart fa-1x"></i> Produtos </a></li>
                         
                     </ul>  
                 </div>
