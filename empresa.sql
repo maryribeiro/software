@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.3.11
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 24-Nov-2016 às 00:31
--- Versão do servidor: 10.1.19-MariaDB
--- PHP Version: 5.5.38
+-- Generation Time: 28-Nov-2016 às 11:32
+-- Versão do servidor: 5.6.24
+-- PHP Version: 5.6.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -20,7 +20,7 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `funcionario`
 --
 
-CREATE TABLE `funcionario` (
+CREATE TABLE IF NOT EXISTS `funcionario` (
   `id` int(11) NOT NULL,
   `nome` varchar(255) NOT NULL,
   `login` varchar(50) NOT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE `funcionario` (
 -- Estrutura da tabela `marca`
 --
 
-CREATE TABLE `marca` (
+CREATE TABLE IF NOT EXISTS `marca` (
   `id` int(11) NOT NULL,
   `descricao` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -44,7 +44,7 @@ CREATE TABLE `marca` (
 -- Estrutura da tabela `produto`
 --
 
-CREATE TABLE `produto` (
+CREATE TABLE IF NOT EXISTS `produto` (
   `id` int(11) NOT NULL,
   `marca_id` int(11) NOT NULL,
   `descricao` varchar(255) NOT NULL,
@@ -83,4 +83,4 @@ ALTER TABLE `produto`
 -- Limitadores para a tabela `marca`
 --
 ALTER TABLE `marca`
-  ADD CONSTRAINT `marca_ibfk_1` FOREIGN KEY (`id`) REFERENCES `produto` (`marca_id`);
+ADD CONSTRAINT `marca_ibfk_1` FOREIGN KEY (`id`) REFERENCES `produto` (`marca_id`);
